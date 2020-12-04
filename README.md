@@ -1,6 +1,3 @@
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
 use 'npm start' to start server
 Server will load at browser : http://localhost:3000
 
