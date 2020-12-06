@@ -30,7 +30,7 @@ getStyle = () => {
                     <input type="checkbox" onChange={this.props.markComplete.bind(this, id)} /> 
                     {' '}
                     {title }
-                    { <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle} >X</button> } 
+                    { <button class="del" onClick={this.props.delTodo.bind(this, id)} style={btnStyle}  >X</button> } 
                 </p>
             </div>
         )

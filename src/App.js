@@ -1,5 +1,6 @@
 import React , { Component } from 'react'
 import Todos from './Components/Todos'
+import AddTodo from './Components/AddTodo'
 import './App.css'
 import Header from './Components/layout/Header'
 
@@ -14,7 +15,7 @@ class App extends Component {
       {
         id: 2,
         title: 'Submit the task',
-        completed:true
+        completed:false
       },
       {
         id: 3,
@@ -44,12 +45,29 @@ class App extends Component {
     this.setState( { todos: [...this.state.todos.filter(todo => todo.id !== id) ] } )
   }
 
+  // add todo
+  addTodo = (title) => {
+    const newTodo = {
+      id: this.state.todos.length + 1 ,
+      // '.length' is used to calculate length of array 'todos'
+      title : title,
+      completed: false
+    }
+    this.setState({ todos: [...this.state.todos, newTodo]})
+  }
+
   render() {
 
     return (
         <div className="App">
+          <div class="container">
+          {/* header */}
           <Header />
+          {/* adding new todo  */}
+          <AddTodo addTodo={this.addTodo} />
+          {/* listing todo */}
           <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={ this.delTodo}/>
+          </div>
       </div>
     )
   }
